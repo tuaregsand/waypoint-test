@@ -1,0 +1,12 @@
+# Compiled output
+target/
+
+# IDE
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+
+# Maven
+.mvn/wrapper/maven-wrapper.jar

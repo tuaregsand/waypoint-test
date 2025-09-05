@@ -1,0 +1,128 @@
+name: WaypointPlus
+main: dev.waypointplus.WaypointPlus
+version: 1.0.0
+api-version: '1.21'
+author: Synthetic
+website: https://example.invalid
+softdepend: [Vault]
+load: POSTWORLD
+description: QoL teleports with homes, warps, spawn, back, RTP, and TPA.
+
+commands:
+  home:
+    description: Teleport to a home
+    usage: "/home [name]"
+    aliases: [h]
+    permission: waypointplus.home.use
+  sethome:
+    description: Set a home
+    usage: "/sethome [name]"
+    permission: waypointplus.home.set
+  delhome:
+    description: Delete a home
+    usage: "/delhome <name>"
+    permission: waypointplus.home.delete
+  homes:
+    description: List your homes
+    usage: "/homes"
+    permission: waypointplus.home.list
+
+  warp:
+    description: Teleport to a warp
+    usage: "/warp <name>"
+    permission: waypointplus.warp.use
+  setwarp:
+    description: Create or update a warp
+    usage: "/setwarp <name>"
+    permission: waypointplus.warp.set
+  delwarp:
+    description: Delete a warp
+    usage: "/delwarp <name>"
+    permission: waypointplus.warp.delete
+  warps:
+    description: List warps
+    usage: "/warps"
+    permission: waypointplus.warp.list
+
+  spawn:
+    description: Teleport to spawn
+    usage: "/spawn"
+    permission: waypointplus.spawn
+  setspawn:
+    description: Set plugin spawn to your location
+    usage: "/setspawn"
+    permission: waypointplus.setspawn
+
+  back:
+    description: Return to your last location
+    usage: "/back"
+    aliases: [return]
+    permission: waypointplus.back
+
+  rtp:
+    description: Random safe teleport in this world (or named world)
+    usage: "/rtp [world]"
+    permission: waypointplus.rtp
+
+  tpa:
+    description: Request to teleport to a player
+    usage: "/tpa <player>"
+    permission: waypointplus.tpa.send
+  tpaccept:
+    description: Accept the last TPA request
+    usage: "/tpaccept"
+    permission: waypointplus.tpa.accept
+  tpdeny:
+    description: Deny the last TPA request
+    usage: "/tpdeny"
+    permission: waypointplus.tpa.deny
+  tpacancel:
+    description: Cancel your outgoing TPA request
+    usage: "/tpacancel"
+    permission: waypointplus.tpa.cancel
+
+permissions:
+  waypointplus.*:
+    description: All WaypointPlus permissions
+    default: op
+    children:
+      waypointplus.home.*: true
+      waypointplus.warp.*: true
+      waypointplus.spawn: true
+      waypointplus.setspawn: true
+      waypointplus.back: true
+      waypointplus.rtp: true
+      waypointplus.tpa.*: true
+
+  waypointplus.home.*:
+    default: true
+    children:
+      waypointplus.home.use: true
+      waypointplus.home.set: true
+      waypointplus.home.delete: true
+      waypointplus.home.list: true
+
+  waypointplus.warp.*:
+    default: op
+    children:
+      waypointplus.warp.use: true
+      waypointplus.warp.set: true
+      waypointplus.warp.delete: true
+      waypointplus.warp.list: true
+
+  waypointplus.spawn: { default: true }
+  waypointplus.setspawn: { default: op }
+  waypointplus.back: { default: true }
+  waypointplus.rtp: { default: true }
+
+  waypointplus.tpa.*:
+    default: true
+    children:
+      waypointplus.tpa.send: true
+      waypointplus.tpa.accept: true
+      waypointplus.tpa.deny: true
+      waypointplus.tpa.cancel: true
+
+  # Grant per-player home limits like: waypointplus.homes.5
+  waypointplus.homes.*: { default: op }
+

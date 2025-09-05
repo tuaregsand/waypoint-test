@@ -1,0 +1,43 @@
+# WaypointPlus configuration
+
+# Per-feature warmups (seconds), cooldowns (seconds), and economy costs.
+teleport:
+  home:     { warmup: 2, cooldown: 10, cost: 0.0, cancel-on-move: true }
+  warp:     { warmup: 2, cooldown: 10, cost: 0.0, cancel-on-move: true }
+  spawn:    { warmup: 2, cooldown: 10, cost: 0.0, cancel-on-move: true }
+  back:     { warmup: 0, cooldown: 15, cost: 0.0, cancel-on-move: false }
+  rtp:      { warmup: 3, cooldown: 45, cost: 0.0, cancel-on-move: true }
+  tpa:      { warmup: 0, cooldown: 15, cost: 0.0, cancel-on-move: false }
+
+homes:
+  default-limit: 1  # overridden by permission: waypointplus.homes.<n>
+
+rtp:
+  # Prefer WorldBorder when present. Otherwise this radius is used from player position.
+  use-worldborder: true
+  radius: 5000
+  max-attempts: 24
+  min-y: -60
+  safe-blocks-blacklist:
+    - WATER
+    - LAVA
+    - MAGMA_BLOCK
+    - CAMPFIRE
+    - SOUL_CAMPFIRE
+    - CACTUS
+    - FIRE
+    - SWEET_BERRY_BUSH
+  # Prevent teleporting into leaves:
+  use-heightmap-no-leaves: true
+
+back:
+  save-on-death: true
+  save-on-teleport: true  # store /back before plugin teleports
+
+messages:
+  prefix: "&7[&bWaypointPlus&7]&r "
+
+economy:
+  require-vault: false   # if true and Vault missing, plugin disables
+  format: "$%.2f"
+

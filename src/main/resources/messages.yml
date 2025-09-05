@@ -1,0 +1,41 @@
+prefix: "&7[&bWaypointPlus&7]&r "
+no-permission: "&cYou do not have permission."
+player-only: "&cPlayers only."
+invalid-args: "&eUsage: {usage}"
+
+cooldown: "&eWait &6{seconds}s &eto use &6/{action}&e again."
+warmup-start: "&aTeleporting in &6{seconds}s&a. Do not move."
+warmup-cancelled: "&cTeleport cancelled because you moved."
+charged: "&7Charged &6{amount}&7."
+insufficient-funds: "&cYou need &6{amount}&c."
+
+home-set: "&aHome &6{home}&a set."
+home-deleted: "&aHome &6{home}&a deleted."
+home-missing: "&cHome &6{home}&c not found."
+home-teleport: "&aTeleported to home &6{home}&a."
+home-limit: "&cYou have reached your home limit (&6{limit}&c)."
+homes-list: "&aHomes: &f{list}"
+
+warp-set: "&aWarp &6{warp}&a set."
+warp-deleted: "&aWarp &6{warp}&a deleted."
+warp-missing: "&cWarp &6{warp}&c not found."
+warp-list: "&aWarps: &f{list}"
+warp-teleport: "&aTeleported to warp &6{warp}&a."
+
+spawn-set: "&aSpawn set."
+spawn-teleport: "&aTeleported to spawn."
+
+back-missing: "&cNo previous location stored."
+back-teleport: "&aReturned to your last location."
+
+rtp-start: "&7Searching for a safe spot…"
+rtp-failed: "&cFailed to find a safe spot. Try again."
+rtp-teleport: "&aTeleported to a random location."
+
+tpa-sent: "&aRequest sent to &6{player}&a. Expires in &6{seconds}s&a."
+tpa-received: "&e{player} &awants to teleport to you. &7(/tpaccept or /tpdeny)"
+tpa-accepted: "&aRequest accepted."
+tpa-denied: "&cRequest denied."
+tpa-none: "&cNo pending request."
+tpa-cancelled: "&eRequest cancelled."
+
